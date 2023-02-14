@@ -1,2 +1,4 @@
-package com.hasan.finalcaseproject.util;public class Generator {
+package com.hasan.finalcaseproject.util;
+
+public class Generator {
 }
