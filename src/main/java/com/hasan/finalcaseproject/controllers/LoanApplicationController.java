@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/loanapplication")
+@RequestMapping("/forms")
 public class LoanApplicationController {
     private LoanApplicationService loanApplicationService;
     private CustomerService customerService;
