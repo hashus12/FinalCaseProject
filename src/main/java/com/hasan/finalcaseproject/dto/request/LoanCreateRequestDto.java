@@ -2,10 +2,8 @@ package com.hasan.finalcaseproject.dto.request;
 
 import lombok.Data;
 
-import java.math.BigInteger;
-
 @Data
-public class LoanCreateRequest {
+public class LoanCreateRequestDto {
     Long loanId;
     Long customerId;
     Boolean loanResult;

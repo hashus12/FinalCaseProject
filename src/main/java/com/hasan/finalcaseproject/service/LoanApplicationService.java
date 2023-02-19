@@ -1,17 +1,18 @@
-package com.hasan.finalcaseproject.services;
+package com.hasan.finalcaseproject.service;
 
+import com.hasan.finalcaseproject.converter.CustomerConverter;
 import com.hasan.finalcaseproject.converter.LoanConverter;
-import com.hasan.finalcaseproject.repos.*;
-import com.hasan.finalcaseproject.dto.request.LoanApplicationRequest;
-import com.hasan.finalcaseproject.dto.response.LoanApplicationResponse;
+import com.hasan.finalcaseproject.repository.*;
+import com.hasan.finalcaseproject.dto.request.LoanApplicationRequestDto;
+import com.hasan.finalcaseproject.dto.response.LoanApplicationResponseDto;
 import com.hasan.finalcaseproject.model.Collateral;
 import com.hasan.finalcaseproject.model.Customer;
 import com.hasan.finalcaseproject.model.Loan;
 import com.hasan.finalcaseproject.util.generator.NumberGenerator;
 import lombok.RequiredArgsConstructor;
-import org.apache.coyote.Request;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
+@Slf4j
 @RequiredArgsConstructor
 @Service
 public class LoanApplicationService {
@@ -19,10 +20,11 @@ public class LoanApplicationService {
     private final LoanService loanService;
     private final CollateralService collateralService;
     Double loanLimitMultiplier = 4.0;
-    private final CustomerRepository customerRepository;
+    private final LoanConverter loanConverter;
+    private final CustomerConverter customerConverter;
 
-    public LoanApplicationResponse applyForLoan(LoanApplicationRequest request) {
-        Customer customer = customerRepository.findByIdentityNumber(request.getIdentityNumber());
+    public LoanApplicationResponseDto applyForLoan(LoanApplicationRequestDto request) {
+        Customer customer = customerService.findByIdentityNumber(request.getIdentityNumber());
         if (customer != null) {
             return null;
             //mesaj zaten başvuru var.
@@ -34,18 +36,20 @@ public class LoanApplicationService {
             customer.setIdentityNumber(request.getIdentityNumber());
             customer.setPhoneNumber(request.getPhoneNumber());
             customer.setBirthDate(request.getBirthDate());
-            customerService.saveOneCustomer(customer);
+
+            customerService.createCustomer(customerConverter.convertEntityToRequestDto(customer));
         }
         return applyForLoanBussines(customer,request);
     }
 
-    public LoanApplicationResponse applyForLoanBussines(Customer customer, LoanApplicationRequest request) {
+    public LoanApplicationResponseDto applyForLoanBussines(Customer customer, LoanApplicationRequestDto request) {
         Collateral collateralToSave = new Collateral();
         Loan loanToSave = new Loan();
-        collateralToSave.setCollateralIdentityno(request.getCollateralIdentityNo());
+        collateralToSave.setCollateralIdentityno(request.getCollateralIdentityno());
         collateralToSave.setCollateralValue(request.getCollateralValue());
 
         Double loanScore = NumberGenerator.randomNumber();
+
         if (loanScore < 500) {
             loanToSave.setLoanResult(false);
             loanToSave.setLoanLimit(null);
@@ -83,10 +87,7 @@ public class LoanApplicationService {
 
         collateralService.saveOneCollateral(collateralToSave);
         loanService.saveOneLoan(loanToSave);
-        LoanApplicationResponse loanApplicationResponse = new LoanApplicationResponse();
-        loanApplicationResponse.setLoanResult(loanToSave.getLoanResult());
-        loanApplicationResponse.setLoanLimit(loanToSave.getLoanLimit());
-        return loanApplicationResponse;
+        return loanConverter.convertToDto(loanToSave);
 //                return loanConverter.convertToDto(loanService.createOneLoan(loanToSave));
 
     }

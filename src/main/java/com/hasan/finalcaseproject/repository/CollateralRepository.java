@@ -1,4 +1,4 @@
-package com.hasan.finalcaseproject.repos;
+package com.hasan.finalcaseproject.repository;
 
 import com.hasan.finalcaseproject.model.Collateral;
 import org.springframework.data.jpa.repository.JpaRepository;

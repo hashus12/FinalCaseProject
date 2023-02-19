@@ -2,15 +2,15 @@ package com.hasan.finalcaseproject.dto.request;
 
 import lombok.Data;
 
-import java.time.LocalDate;
+import java.util.Date;
 
 @Data
-public class LoanApplicationRequest {
+public class LoanApplicationRequestDto {
     String identityNumber;
     String fullName;
     Double monthlyIncome;
     String phoneNumber;
-    LocalDate birthDate;
-    Long collateralIdentityNo;
+    Date birthDate;
+    Long collateralIdentityno;
     Double collateralValue;
 }

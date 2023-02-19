@@ -16,13 +16,15 @@ public class Loan {
     @Column(nullable = false)
     private Long id;
 
-    @OneToOne(fetch = FetchType.LAZY)
+//    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="customer_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
 //    @JsonIgnore
     private Customer customer;
 
-    @OneToOne(fetch = FetchType.LAZY)
+//    @OneToOne(fetch = FetchType.LAZY)
+    @OneToOne(fetch = FetchType.EAGER)
     @JoinColumn(name="collateral_id", nullable = false)
     @OnDelete(action = OnDeleteAction.CASCADE)
 //    @JsonIgnore

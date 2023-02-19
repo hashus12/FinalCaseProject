@@ -1,18 +1,16 @@
-package com.hasan.finalcaseproject.services;
+package com.hasan.finalcaseproject.service;
 
 import com.hasan.finalcaseproject.model.Collateral;
-import com.hasan.finalcaseproject.model.Customer;
-import com.hasan.finalcaseproject.repos.CollateralRepository;
+import com.hasan.finalcaseproject.repository.CollateralRepository;
+import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
-
+@Slf4j
+@RequiredArgsConstructor
 @Service
 public class CollateralService {
 
     private final CollateralRepository collateralRepository;
-
-    public CollateralService(CollateralRepository collateralRepository) {
-        this.collateralRepository = collateralRepository;
-    }
 
     public Collateral saveOneCollateral(Collateral newCollateral) {
         return collateralRepository.save(newCollateral);

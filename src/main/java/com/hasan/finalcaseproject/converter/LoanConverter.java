@@ -2,9 +2,9 @@ package com.hasan.finalcaseproject.converter;
 
 import com.hasan.finalcaseproject.model.Customer;
 import com.hasan.finalcaseproject.model.Loan;
-import com.hasan.finalcaseproject.dto.request.LoanApplicationRequest;
-import com.hasan.finalcaseproject.dto.response.LoanApplicationResponse;
-import com.hasan.finalcaseproject.dto.request.LoanCreateRequest;
+import com.hasan.finalcaseproject.dto.request.LoanApplicationRequestDto;
+import com.hasan.finalcaseproject.dto.response.LoanApplicationResponseDto;
+import com.hasan.finalcaseproject.dto.request.LoanCreateRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Component;
@@ -12,16 +12,16 @@ import org.springframework.stereotype.Component;
 @RequiredArgsConstructor
 @Component
 public class LoanConverter {
-    public LoanApplicationResponse convertToDto(Loan loanToSave) {
-        LoanApplicationResponse loanApplicationResponseDto = new LoanApplicationResponse();
-        loanApplicationResponseDto.setLoanResult(loanToSave.getLoanResult());
-        loanApplicationResponseDto.setLoanLimit(loanToSave.getLoanLimit());
+    public LoanApplicationResponseDto convertToDto(Loan loan) {
+        LoanApplicationResponseDto loanApplicationResponseDto = new LoanApplicationResponseDto();
+        loanApplicationResponseDto.setLoanResult(loan.getLoanResult());
+        loanApplicationResponseDto.setLoanLimit(loan.getLoanLimit());
 
         return loanApplicationResponseDto;
     }
 
-    public LoanCreateRequest convertLoanCreateRequestToDto(Loan loanToSave) {
-        LoanCreateRequest loanCreateRequestDto = new LoanCreateRequest();
+    public LoanCreateRequestDto convertLoanCreateRequestToDto(Loan loanToSave) {
+        LoanCreateRequestDto loanCreateRequestDto = new LoanCreateRequestDto();
         loanCreateRequestDto.setCustomerId(loanToSave.getId());
         loanCreateRequestDto.setLoanResult(loanToSave.getLoanResult());
         loanCreateRequestDto.setLoanLimit(loanToSave.getLoanLimit());
@@ -29,7 +29,7 @@ public class LoanConverter {
         return loanCreateRequestDto;
     }
 
-    public Loan convertToEntityFromRequest(LoanApplicationRequest dto){
+    public Loan convertToEntityFromRequest(LoanApplicationRequestDto dto){
         Loan loan = new Loan();
         if (dto != null){
             BeanUtils.copyProperties(dto, loan);
@@ -37,7 +37,7 @@ public class LoanConverter {
         return loan;
     }
 
-    public Customer convertCustomerToEntityFromRequest(LoanApplicationRequest dto){
+    public Customer convertCustomerToEntityFromRequest(LoanApplicationRequestDto dto){
         Customer customer = new Customer();
         if (dto != null){
             BeanUtils.copyProperties(dto, customer);
