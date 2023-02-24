@@ -1,20 +1,19 @@
 package com.hasan.finalcaseproject.model;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.hibernate.annotations.OnDelete;
 import org.hibernate.annotations.OnDeleteAction;
 
 import javax.persistence.*;
-
+@AllArgsConstructor
+@NoArgsConstructor
 @Entity
 @Table(name="loan")
 @Data
-public class Loan {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(nullable = false)
-    private Long id;
+public class Loan extends BaseModel{
 
 //    @OneToOne(fetch = FetchType.LAZY)
     @OneToOne(fetch = FetchType.EAGER)

@@ -6,5 +6,6 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LoanRepository extends JpaRepository <Loan, Long> {
-    Loan getLoanByCustomer_Id(Long customerId);
+    Loan findLoanByCustomerId(Long customerId);
+
 }

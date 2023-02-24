@@ -1,23 +1,25 @@
 package com.hasan.finalcaseproject.controller;
 
 import com.hasan.finalcaseproject.model.Loan;
-import com.hasan.finalcaseproject.service.LoanService;
+import com.hasan.finalcaseproject.service.implementation.LoanServiceImpl;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController
-@RequestMapping("/loans")
-public class LoanController {
-    private LoanService loanService;
+import javax.validation.Valid;
 
-    public LoanController(LoanService loanService) {
-        this.loanService = loanService;
+@RestController
+@RequestMapping("/api/v1/loans")
+public class LoanController {
+    private LoanServiceImpl loanServiceImpl;
+
+    public LoanController(LoanServiceImpl loanServiceImpl) {
+        this.loanServiceImpl = loanServiceImpl;
     }
 
     @PostMapping
-    public Loan createOneLoan(@RequestBody Loan newLoan) {
-        return loanService.saveOneLoan(newLoan);
+    public Loan createOneLoan(@Valid @RequestBody Loan newLoan) {
+        return loanServiceImpl.saveOneLoan(newLoan);
     }
 }

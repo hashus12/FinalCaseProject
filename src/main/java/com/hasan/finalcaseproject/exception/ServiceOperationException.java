@@ -7,6 +7,18 @@ public class ServiceOperationException {
         }
     }
 
+    public static class AlreadyExistException extends BaseException {
+        public AlreadyExistException(String message) {
+            super(message);
+        }
+    }
+
+    public static class NotCreatedException extends BaseException {
+        public NotCreatedException(String message) {
+            super(message);
+        }
+    }
+
     public static class AlreadyDeletedException extends BaseException {
         public AlreadyDeletedException(String message) {
             super(message);

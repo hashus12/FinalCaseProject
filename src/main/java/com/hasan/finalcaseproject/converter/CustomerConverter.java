@@ -29,7 +29,6 @@ public class CustomerConverter {
 
     public CreateCustomerDto convertEntityToRequestDto(Customer customer){
         CreateCustomerDto createCustomerDto = new CreateCustomerDto();
-        createCustomerDto.setId(customer.getId());
         createCustomerDto.setIdentityNumber(customer.getIdentityNumber());
         createCustomerDto.setFullName(customer.getFullName());
         createCustomerDto.setPhoneNumber(customer.getPhoneNumber());
@@ -66,11 +65,11 @@ public class CustomerConverter {
 
     public Customer convertRequestDtoToEntity(CreateCustomerDto dto) {
         Customer customer = new Customer();
-        customer.setId(dto.getId());
         customer.setFullName(dto.getFullName());
         customer.setPhoneNumber(dto.getPhoneNumber());
         customer.setMonthlyIncome(dto.getMonthlyIncome());
         customer.setBirthDate(dto.getBirthDate());
+        customer.setIdentityNumber(dto.getIdentityNumber());
 
         return customer;
     }
@@ -82,6 +81,19 @@ public class CustomerConverter {
         customer.setPhoneNumber(dto.getPhoneNumber());
         customer.setMonthlyIncome(dto.getMonthlyIncome());
         customer.setBirthDate(dto.getBirthDate());
+        customer.setIdentityNumber(dto.getIdentityNumber());
+
+        return customer;
+    }
+
+    public Customer convertResponseDtoToEntity(CustomerResponseDto dto) {
+        Customer customer = new Customer();
+        customer.setId(dto.getId());
+        customer.setFullName(dto.getFullName());
+        customer.setPhoneNumber(dto.getPhoneNumber());
+        customer.setMonthlyIncome(dto.getMonthlyIncome());
+        customer.setBirthDate(dto.getBirthDate());
+        customer.setIdentityNumber(dto.getIdentityNumber());
 
         return customer;
     }
