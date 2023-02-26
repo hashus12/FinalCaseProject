@@ -26,6 +26,7 @@ public class LoanServiceImpl implements LoanService {
 
     public boolean checkCustomerHasLoanApplication(Long customerId) {
         Loan loan = loanRepository.findLoanByCustomerId(customerId);
+        log.debug("Loan Id -> {} date: {} getting", customerId, new Date());
         if (loan != null) {
             return true;
         }
@@ -36,7 +37,7 @@ public class LoanServiceImpl implements LoanService {
         Loan loan = loanRepository.findLoanByCustomerId(customerId);
         if (loan == null)
             throw new ServiceOperationException.NotFoundException("Loan not found");
-        log.info("Customer Id -> {} date: {} getting", customerId, new Date());
+        log.debug("Customer Id -> {} date: {} getting", customerId, new Date());
         return loan;
     }
 
@@ -44,7 +45,7 @@ public class LoanServiceImpl implements LoanService {
         Loan loan = loanRepository.findLoanByCustomerId(customerId);
         if (loan != null)
             throw new ServiceOperationException.AlreadyExistException("already exist a loan application ."+customerId);
-        log.info("Customer Id -> {} date: {} getting", customerId, new Date());
+        log.debug("Customer Id -> {} date: {} getting", customerId, new Date());
         return loan;
     }
 }

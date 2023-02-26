@@ -13,9 +13,12 @@
     <version>0.0.1-SNAPSHOT</version>
     <name>FinalCaseProject</name>
     <description>FinalCaseProject</description>
+    <packaging>jar</packaging>
     <properties>
         <java.version>17</java.version>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQL8Dialect</property>
     </properties>
+
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>

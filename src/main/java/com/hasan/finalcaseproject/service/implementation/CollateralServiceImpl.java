@@ -18,7 +18,7 @@ public class CollateralServiceImpl implements CollateralService {
     
     public Collateral saveOneCollateral(Collateral newCollateral) {
         Collateral collateral = collateralRepository.save(newCollateral);
-        log.info("Collateral Id -> {} date: {} getting", newCollateral.getId(), new Date());
+        log.debug("Collateral Id -> {} date: {} getting", newCollateral.getId(), new Date());
         return collateral;
     }
 }

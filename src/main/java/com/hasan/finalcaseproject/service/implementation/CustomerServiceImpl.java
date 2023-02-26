@@ -33,19 +33,19 @@ public class CustomerServiceImpl implements CustomerService {
                 .stream()
                 .map(customerConverter::convertEntityToResponseDto)
                 .collect(Collectors.toList());
-        log.info("Customers get all date: {} getting", new Date());
+        log.debug("Customers get all date: {} getting", new Date());
         return customerResponseDtoList;
     }
 
     public Customer createCustomer(CreateCustomerDto createCustomerDto) {
         Customer customer = customerRepository.save(customerConverter.convertRequestDtoToEntity(createCustomerDto));
-        log.info("Customer ID -> {} date: {} saved", customer.getId(), new Date());
+        log.debug("Customer ID -> {} date: {} saved", customer.getId(), new Date());
         return customer;
     }
 
     public Customer saveCustomer(Customer createCustomer) {
         Customer customer = customerRepository.save(createCustomer);
-        log.info("Customer ID -> {} date: {} saved", customer.getId(), new Date());
+        log.debug("Customer ID -> {} date: {} saved", customer.getId(), new Date());
         return customer;
     }
 
@@ -53,7 +53,7 @@ public class CustomerServiceImpl implements CustomerService {
     public CustomerResponseDto findCustomerById(Long customerId) {
         Customer customer = customerRepository.findById(customerId).orElseThrow(
                 () -> new ServiceOperationException.NotFoundException("Customer could not find by id:"+customerId));
-        log.info("Customer ID -> {} date: {} getting", customerId, new Date());
+        log.debug("Customer ID -> {} date: {} getting", customerId, new Date());
         return customerConverter.convertEntityToResponseDto(customer);
     }
 
@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerService {
 
         Customer customer = customerConverter.convertRequestDtoToEntity(updateCustomerDto);
         customerRepository.save(customer);
-        log.info("Customer ID -> {} date: {} updated", updateCustomerDto.getId(), new Date());
+        log.debug("Customer ID -> {} date: {} updated", updateCustomerDto.getId(), new Date());
     }
 
     public void deleteCustomerById(Long customerId) {
@@ -75,14 +75,14 @@ public class CustomerServiceImpl implements CustomerService {
             throw new ServiceOperationException.CanNotDeletedException("You can not delete because customer has loan application");
         }
         customerRepository.deleteById(customerId);
-        log.info("Customer ID -> {} date: {} deleted", customer.getId(), new Date());
+        log.debug("Customer ID -> {} date: {} deleted", customer.getId(), new Date());
     }
 
     public Customer findByIdentityNumber(String identityNumber) {
         Customer customer = customerRepository.findByIdentityNumber(identityNumber);
         if (customer == null)
             throw new ServiceOperationException.NotFoundException("Customer not found");
-        log.info("Customer identity number -> {} date: {} getting", identityNumber, new Date());
+        log.debug("Customer identity number -> {} date: {} getting", identityNumber, new Date());
         return customer;
     }
 
@@ -90,7 +90,7 @@ public class CustomerServiceImpl implements CustomerService {
         Customer customer = customerRepository.findByIdentityNumber(identityNumber);
         if (customer != null)
             throw new ServiceOperationException.AlreadyExistException("Customer loan application already exist");
-        log.info("Customer identity number -> {} date: {} getting", identityNumber, new Date());
+        log.debug("Customer identity number -> {} date: {} getting", identityNumber, new Date());
         return customer;
     }
 }
