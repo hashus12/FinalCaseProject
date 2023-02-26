@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: FinalCaseProject
+  name: finalcaseproject
 spec:
   selector:
     matchLabels:
-      app: FinalCaseProject
+      app: finalcaseproject
   replicas: 1
   template:
     metadata:
       labels:
-        app: FinalCaseProject
+        app: finalcaseproject
     spec:
       containers:
         - name: finalcaseproject

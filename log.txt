@@ -449,3 +449,87 @@ Caused by: java.sql.SQLSyntaxErrorException: Table 'sql7601135.loan' doesn't exi
 2023-02-26 13:51:12.213  INFO 16288 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2023-02-26 13:51:12.217  INFO 16288 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2023-02-26 13:51:12.225  INFO 16288 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-02-26 16:39:22.263  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Starting FinalCaseProjectApplication using Java 17.0.6 on DESKTOP-5J1G5VA with PID 18920 (C:\Development\intellij\finalcaseproject\target\classes started by hasan in C:\Development\intellij\FinalCaseProject)
+2023-02-26 16:39:22.265 DEBUG 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Running with Spring Boot v2.7.8, Spring v5.3.25
+2023-02-26 16:39:22.265  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-02-26 16:39:22.325  INFO 18920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2023-02-26 16:39:22.326  INFO 18920 --- [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2023-02-26 16:39:23.533  INFO 18920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-26 16:39:23.625  INFO 18920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 4 JPA repository interfaces.
+2023-02-26 16:39:24.391  INFO 18920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-26 16:39:24.402  INFO 18920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-26 16:39:24.403  INFO 18920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-26 16:39:24.502  INFO 18920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-26 16:39:24.502  INFO 18920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2176 ms
+2023-02-26 16:39:24.698  INFO 18920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-26 16:39:24.768  INFO 18920 --- [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.6.14.Final
+2023-02-26 16:39:24.995  INFO 18920 --- [restartedMain] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2023-02-26 16:39:25.122  INFO 18920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-02-26 16:39:25.996  INFO 18920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-02-26 16:39:26.034  INFO 18920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-02-26 16:39:26.725  INFO 18920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-26 16:39:26.735  INFO 18920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-26 16:39:27.350  WARN 18920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-26 16:39:27.598  INFO 18920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-02-26 16:39:27.796  INFO 18920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-26 16:39:28.065  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Started FinalCaseProjectApplication in 6.261 seconds (JVM running for 7.228)
+2023-02-26 16:39:37.884  INFO 18920 --- [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-02-26 16:39:37.885  INFO 18920 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-02-26 16:39:37.888  INFO 18920 --- [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2023-02-26 16:39:38.379 DEBUG 18920 --- [http-nio-8080-exec-2] c.h.f.s.i.CustomerServiceImpl            : Customers get all date: Sun Feb 26 16:39:38 TRT 2023 getting
+2023-02-26 16:43:19.677  INFO 18920 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 48 class path changes (0 additions, 47 deletions, 1 modification)
+2023-02-26 16:43:19.717  INFO 18920 --- [Thread-4] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-02-26 16:43:19.718  INFO 18920 --- [Thread-4] o.a.c.c.C.[Tomcat].[localhost].[/]       : Destroying Spring FrameworkServlet 'dispatcherServlet'
+2023-02-26 16:43:19.727  INFO 18920 --- [Thread-4] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-26 16:43:19.733  INFO 18920 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-02-26 16:43:19.743  INFO 18920 --- [Thread-4] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-02-26 16:43:19.834  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Starting FinalCaseProjectApplication using Java 17.0.6 on DESKTOP-5J1G5VA with PID 18920 (C:\Development\intellij\finalcaseproject\target\classes started by hasan in C:\Development\intellij\FinalCaseProject)
+2023-02-26 16:43:19.834 DEBUG 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Running with Spring Boot v2.7.8, Spring v5.3.25
+2023-02-26 16:43:19.834  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-02-26 16:43:20.158  INFO 18920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-26 16:43:20.159  INFO 18920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 0 ms. Found 0 JPA repository interfaces.
+2023-02-26 16:43:20.265  INFO 18920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-26 16:43:20.266  INFO 18920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-26 16:43:20.266  INFO 18920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-26 16:43:20.288  INFO 18920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-26 16:43:20.288  INFO 18920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 451 ms
+2023-02-26 16:43:20.324  INFO 18920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-26 16:43:20.330  INFO 18920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Starting...
+2023-02-26 16:43:20.737  INFO 18920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Start completed.
+2023-02-26 16:43:20.737  INFO 18920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-02-26 16:43:20.747  INFO 18920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-26 16:43:20.747  INFO 18920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-26 16:43:20.831  WARN 18920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-26 16:43:20.914  INFO 18920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-02-26 16:43:21.009  INFO 18920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-26 16:43:21.078  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Started FinalCaseProjectApplication in 1.278 seconds (JVM running for 240.241)
+2023-02-26 16:43:21.082  INFO 18920 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-02-26 16:43:25.324  INFO 18920 --- [File Watcher] rtingClassPathChangeChangedEventListener : Restarting due to 47 class path changes (47 additions, 0 deletions, 0 modifications)
+2023-02-26 16:43:25.358  INFO 18920 --- [Thread-7] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2023-02-26 16:43:25.362  INFO 18920 --- [Thread-7] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-26 16:43:25.363  INFO 18920 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown initiated...
+2023-02-26 16:43:25.365  INFO 18920 --- [Thread-7] com.zaxxer.hikari.HikariDataSource       : HikariPool-2 - Shutdown completed.
+2023-02-26 16:43:25.440  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Starting FinalCaseProjectApplication using Java 17.0.6 on DESKTOP-5J1G5VA with PID 18920 (C:\Development\intellij\finalcaseproject\target\classes started by hasan in C:\Development\intellij\FinalCaseProject)
+2023-02-26 16:43:25.440 DEBUG 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Running with Spring Boot v2.7.8, Spring v5.3.25
+2023-02-26 16:43:25.440  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : No active profile set, falling back to 1 default profile: "default"
+2023-02-26 16:43:25.779  INFO 18920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-02-26 16:43:25.811  INFO 18920 --- [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 31 ms. Found 4 JPA repository interfaces.
+2023-02-26 16:43:25.895  INFO 18920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-02-26 16:43:25.895  INFO 18920 --- [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-02-26 16:43:25.896  INFO 18920 --- [restartedMain] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.71]
+2023-02-26 16:43:25.916  INFO 18920 --- [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-02-26 16:43:25.916  INFO 18920 --- [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 474 ms
+2023-02-26 16:43:25.951  INFO 18920 --- [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-02-26 16:43:25.957  INFO 18920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Starting...
+2023-02-26 16:43:26.399  INFO 18920 --- [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Start completed.
+2023-02-26 16:43:26.400  INFO 18920 --- [restartedMain] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.MySQL55Dialect
+2023-02-26 16:43:26.443  INFO 18920 --- [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-02-26 16:43:26.443  INFO 18920 --- [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-02-26 16:43:26.595  WARN 18920 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-02-26 16:43:26.664  INFO 18920 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2023-02-26 16:43:26.727  INFO 18920 --- [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-02-26 16:43:26.796  INFO 18920 --- [restartedMain] c.h.f.FinalCaseProjectApplication        : Started FinalCaseProjectApplication in 1.383 seconds (JVM running for 245.959)
+2023-02-26 16:43:26.797  INFO 18920 --- [restartedMain] .ConditionEvaluationDeltaLoggingListener : Condition evaluation unchanged
+2023-02-26 16:43:40.096  INFO 18920 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-02-26 16:43:40.098  INFO 18920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown initiated...
+2023-02-26 16:43:40.100  INFO 18920 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-3 - Shutdown completed.

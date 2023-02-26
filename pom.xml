@@ -9,10 +9,10 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.hasan</groupId>
-    <artifactId>FinalCaseProject</artifactId>
+    <artifactId>finalcaseproject</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>FinalCaseProject</name>
-    <description>FinalCaseProject</description>
+    <name>finalcaseproject</name>
+    <description>finalcaseproject</description>
     <packaging>jar</packaging>
     <properties>
         <java.version>17</java.version>

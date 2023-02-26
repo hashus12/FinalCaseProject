@@ -1,5 +1,5 @@
 FROM openjdk:17
 
-COPY FinalCaseProject.jar finalcaseproject.jar
+COPY finalcaseproject.jar finalcaseproject.jar
 
 ENTRYPOINT ["java","-jar","finalcaseproject.jar"]
