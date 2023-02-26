@@ -33,20 +33,17 @@ public class CustomerController {
 
     @GetMapping("/{customerId}")
     public ResponseEntity<CustomerResponseDto> findCustomerById(@PathVariable Long customerId){
-//        entityIdValidator.validate(customerId, "customer");
         return ResponseEntity.ok(customerServiceImpl.findCustomerById(customerId));
     }
 
     @PutMapping
     public ResponseEntity<MessageResponse> updateCustomer(@Valid @RequestBody UpdateCustomerDto updateCustomerDto){
-//        entityIdValidator.validate(updateCustomerDto.getId(), "customer");
         customerServiceImpl.updateCustomer(updateCustomerDto);
         return ResponseEntity.ok(new MessageResponse("Customer updated successfully!"));
     }
 
     @DeleteMapping("/{customerId}")
     public ResponseEntity<MessageResponse> deleteOneCustomer(@PathVariable Long customerId){
-//        entityIdValidator.validate(customerId, "customer");
         customerServiceImpl.deleteCustomerById(customerId);
         return ResponseEntity.ok(new MessageResponse("Customer deleted successfully!"));
     }

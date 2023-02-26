@@ -89,7 +89,6 @@ public class LoanApplicationServiceImpl implements LoanApplicationService {
         collateralServiceImpl.saveOneCollateral(collateralToSave);
         loanServiceImpl.saveOneLoan(loanToSave);
         return loanConverter.convertToDto(loanToSave);
-//                return loanConverter.convertToDto(loanService.createOneLoan(loanToSave));
     }
 
     public LoanApplicationResponseDto findLoanByIdentityAndBirthDate(String identityNumber, Date birthDate) {

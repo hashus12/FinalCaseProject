@@ -20,28 +20,4 @@ public class LoanConverter {
         return loanApplicationResponseDto;
     }
 
-    public LoanCreateRequestDto convertLoanCreateRequestToDto(Loan loanToSave) {
-        LoanCreateRequestDto loanCreateRequestDto = new LoanCreateRequestDto();
-        loanCreateRequestDto.setCustomerId(loanToSave.getId());
-        loanCreateRequestDto.setLoanResult(loanToSave.getLoanResult());
-        loanCreateRequestDto.setLoanLimit(loanToSave.getLoanLimit());
-
-        return loanCreateRequestDto;
-    }
-
-    public Loan convertToEntityFromRequest(LoanApplicationRequestDto dto){
-        Loan loan = new Loan();
-        if (dto != null){
-            BeanUtils.copyProperties(dto, loan);
-        }
-        return loan;
-    }
-
-    public Customer convertCustomerToEntityFromRequest(LoanApplicationRequestDto dto){
-        Customer customer = new Customer();
-        if (dto != null){
-            BeanUtils.copyProperties(dto, customer);
-        }
-        return customer;
-    }
 }

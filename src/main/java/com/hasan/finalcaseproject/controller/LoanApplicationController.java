@@ -17,8 +17,6 @@ import java.util.Date;
 @RequestMapping("/api/v1/forms")
 public class LoanApplicationController {
     private final LoanApplicationServiceImpl loanApplicationServiceImpl;
-    private final CustomerServiceImpl customerServiceImpl;
-    private final LoanServiceImpl loanServiceImpl;
 
     @PostMapping
     public ResponseEntity<LoanApplicationResponseDto> createLoanApplication(@Valid @RequestBody LoanApplicationRequestDto request) {

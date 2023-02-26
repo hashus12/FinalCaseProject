@@ -70,39 +70,4 @@ public class CustomerServiceImplTest extends TestSupport {
         assertEquals(result,
                 customer);
     }
-
-//    @Test
-//    public void testCreateCustomer_whenCreateCustomerDtoDoesNotExists_shouldThrowNotCreatedException() {
-//        Customer customer = generateCustomer();
-//        CreateCustomerDto createCustomerDto = generateCreateCustomerDto();
-//
-//        when(customerConverter.convertRequestDtoToEntity(createCustomerDto)).thenReturn(customer);
-//        when(customerRepository.save(customer)).thenReturn(customer);
-////        when(customerRepository.save(customer)).thenThrow(ServiceOperationException.NotCreatedException.class);
-//
-//
-////        assertThrows(ServiceOperationException.NotCreatedException.class,
-////                () -> customerServiceImpl.createCustomer(createCustomerDto));
-//        when(customerServiceImpl.createCustomer(createCustomerDto))
-//                .thenThrow(ServiceOperationException.NotCreatedException.class);
-//
-//        Customer result = customerServiceImpl.createCustomer(createCustomerDto);
-////
-////        assertEquals(result,
-////                customer);
-//        Mockito.verifyNoInteractions(customerConverter);
-//    }
-
-//    @Test
-//    public void testAddCustomerAddress_whenCustomerIdDoesNotExist_shouldThrowCustomerNotFoundException() {
-//        Customer customer = generateCustomer();
-//        CreateCustomerAddressRequest createCustomerAddressRequest = new CreateCustomerAddressRequest("roterdam", "2000 AA", "street2", 20, "B", "netherlands");
-//
-//        Mockito.when(customerService.findCustomerById("customer-id")).thenThrow(CustomerNotFoundException.class);
-//
-//        assertThrows(CustomerNotFoundException.class,
-//                () -> customerAddressService.addCustomerAddress(customer.getId(), createCustomerAddressRequest));
-//
-//        Mockito.verifyNoInteractions(customerAddressRepository);
-//    }
 }

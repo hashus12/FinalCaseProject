@@ -9,7 +9,6 @@ import java.util.Date;
 
 public class TestSupport {
     public static Date generateDate(){
-//        SimpleDateFormat format = new SimpleDateFormat("dd-M-yyyy hh:mm:ss");
         Date date =new Date();
         return date;
     }

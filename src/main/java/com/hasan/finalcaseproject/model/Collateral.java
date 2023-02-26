@@ -15,5 +15,4 @@ public class Collateral extends BaseModel{
     private Long collateralIdentityno;
 
     private Double collateralValue;
-
 }

@@ -20,10 +20,6 @@ public class LoanServiceImpl implements LoanService {
         return loanRepository.save(newLoan);
     }
 
-    public Loan findLoanbyId(Long customerId) {
-        return loanRepository.findById(customerId).orElse(null);
-    }
-
     public boolean checkCustomerHasLoanApplication(Long customerId) {
         Loan loan = loanRepository.findLoanByCustomerId(customerId);
         log.debug("Loan Id -> {} date: {} getting", customerId, new Date());
@@ -41,12 +37,5 @@ public class LoanServiceImpl implements LoanService {
         return loan;
     }
 
-    public Loan checkAndGetLoanByCustomerId(Long customerId) {
-        Loan loan = loanRepository.findLoanByCustomerId(customerId);
-        if (loan != null)
-            throw new ServiceOperationException.AlreadyExistException("already exist a loan application ."+customerId);
-        log.debug("Customer Id -> {} date: {} getting", customerId, new Date());
-        return loan;
-    }
 }
 
