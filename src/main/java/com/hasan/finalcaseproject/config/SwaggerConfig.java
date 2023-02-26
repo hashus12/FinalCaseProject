@@ -16,17 +16,6 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Configuration
 @EnableSwagger2
 public class SwaggerConfig {
-//    @Bean
-//    public Docket configApi() {
-//        return new Docket(DocumentationType.SWAGGER_2).apiInfo(apiInfo()).pathMapping("/").select()
-//                .apis((RequestHandlerSelectors.basePackage("com.hasan.finalcaseproject.controller")))
-//                .paths(regex("/api/.*")).build();
-//    }
-//
-//    private ApiInfo apiInfo() {
-//        return new ApiInfoBuilder().title("").description("").version("1.0").build();
-//    }
-
     @Bean
     public Docket api() {
         return new Docket(DocumentationType.SWAGGER_2)

@@ -19,13 +19,18 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Slf4j
-@RequiredArgsConstructor
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
     private final CustomerRepository customerRepository;
     private final CustomerConverter customerConverter;
     private final LoanServiceImpl loanServiceImpl;
+
+    public CustomerServiceImpl(CustomerRepository customerRepository, CustomerConverter customerConverter, LoanServiceImpl loanServiceImpl) {
+        this.customerRepository = customerRepository;
+        this.customerConverter = customerConverter;
+        this.loanServiceImpl = loanServiceImpl;
+    }
 
     public List<CustomerResponseDto> getAllCustomers(int pageNumber, int pageSize) {
         Pageable paged = PageRequest.of(pageNumber, pageSize);
