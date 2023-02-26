@@ -4,9 +4,11 @@ import com.hasan.finalcaseproject.dto.request.CreateCustomerDto;
 import com.hasan.finalcaseproject.dto.request.UpdateCustomerDto;
 import com.hasan.finalcaseproject.dto.response.CustomerResponseDto;
 import com.hasan.finalcaseproject.model.Customer;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public interface CustomerService {
     List<CustomerResponseDto> getAllCustomers(int pageNumber, int pageSize);
     Customer createCustomer(CreateCustomerDto createCustomerDto);

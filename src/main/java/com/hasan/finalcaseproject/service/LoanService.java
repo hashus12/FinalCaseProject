@@ -1,11 +1,12 @@
 package com.hasan.finalcaseproject.service;
 
 import com.hasan.finalcaseproject.model.Loan;
+import org.springframework.stereotype.Service;
 
+@Service
 public interface LoanService {
     Loan saveOneLoan(Loan newLoan);
-    Loan findLoanbyId(Long customerId);
     boolean checkCustomerHasLoanApplication(Long customerId);
     Loan findLoanByCustomerId(Long customerId);
-    Loan checkAndGetLoanByCustomerId(Long customerId);
+
 }
